@@ -3,6 +3,9 @@ package com.example.demo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 
 @Service
 public class LogicService {
@@ -75,5 +78,24 @@ public class LogicService {
             res.add(z);
         }
         return res;
+    }
+
+    /**
+     * Problem 4
+     * Write a function that given a list of non negative integers, arranges them such that
+     * they form the largest possible number. For example, given [50, 2, 1, 9], the largest
+     * formed number is 95021.
+     */
+    static void printLargest(ArrayList<Integer> numbers) {
+
+        Collections.sort(numbers, new Comparator<Integer>() {
+            @Override public int compare(Integer num1, Integer num2) {
+                Integer conNum1 = Integer.parseInt(String.valueOf(num1).concat(String.valueOf(num2)));
+                Integer conNum2 = Integer.parseInt(String.valueOf(num2).concat(String.valueOf(num1)));
+                return conNum1.compareTo(conNum2) > 0 ? -1 : 1;
+            }
+        });
+        Iterator it = numbers.iterator();
+        while (it.hasNext()) System.out.print(it.next());
     }
 }

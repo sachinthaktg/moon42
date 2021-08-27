@@ -16,16 +16,7 @@ class DemoApplicationTests {
 
 	@Test
 	void testProblam2() {
-		ArrayList array1 = new ArrayList();
-		array1.add("a");
-		array1.add("b");
-		array1.add("c");
-		ArrayList array2 = new ArrayList();
-		array1.add("1");
-		array1.add("2");
-		array1.add("3");
-		ArrayList<Object> merge = this.logicService.merge(array1, array2);
-		System.out.println(merge);
+
 	}
 
 }
