@@ -72,7 +72,7 @@ public class LogicService {
         ArrayList<Integer> res= new ArrayList<>();
         int x = 0, y = 0, z = 1;
         for(int i = 1; i <= 100; i++) {
-            z = y;
+            x = y;
             y = z;
             z = x + y;
             res.add(z);
